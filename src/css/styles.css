@@ -1,25 +1,85 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+.search-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.search-input {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+  outline: transparent;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 16px;
+  line-height: 1.5;
+  width: 272px;
   font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: #808080;
+  transition: border-color 250ms linear, color 250ms linear;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.search-input:hover {
+  border-color: #000000;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.search-input:focus {
+  border-color: #4e75ff;
+  color: #2e2f42;
+}
+
+.search-btn {
+  display: block;
+  border: none;
+  outline: transparent;
+  background-color: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.search-btn:hover {
+  background-color: #6c8cff;
+}
+
+.gallery {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  display: block;
+  transition: transform 250ms ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.info {
+  text-align: left;
 }
