@@ -1,20 +1,17 @@
 export function renderGallery(images) {
-    const galleryContainer = document.querySelector('.gallery');
-  galleryContainer.innerHTML = images.map(image => `
-    <li>
-      <a href="${image.largeImageURL}">
-        <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-      </a>
-      <div class="info">
-        <p><b>Likes:</b> ${image.likes}</p>
-        <p><b>Views:</b> ${image.views}</p>
-        <p><b>Comments:</b> ${image.comments}</p>
-        <p><b>Downloads:</b> ${image.downloads}</p>
-      </div>
-    </li>
-  `).join('');
-}
-
-export function clearGallery() {
-  document.querySelector('.gallery').innerHTML = '';
+    const gallery = document.querySelector('.gallery');
+    const markup = images.map(image => {
+      return `<li>
+                <a href="${image.largeImageURL}">
+                  <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
+                </a>
+                <ul class="info">
+                  <li><span>Likes:</span> ${image.likes}</li>
+                  <li><span>Views:</span> ${image.views}</li>
+                  <li><span>Comments:</span> ${image.comments}</li>
+                  <li><span>Downloads:</span> ${image.downloads}</li>
+                </ul>
+              </li>`;
+    }).join('');
+    gallery.innerHTML = markup;
 }
